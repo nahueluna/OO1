@@ -12,14 +12,12 @@ public class Farola {
         this.farolasVecinas = new ArrayList<>();
     }
 
-    private void addNeighbor(Farola otraFarola) {
-        this.farolasVecinas.add(otraFarola);
-    }
 
+    // Se considera que otraFarola != null
     public void pairWithNeighbor(Farola otraFarola) {
-        if (otraFarola != null) {
-            this.addNeighbor(otraFarola);
-            otraFarola.addNeighbor(this);
+        if (!this.farolasVecinas.contains(otraFarola)) {
+            this.farolasVecinas.add(otraFarola);
+            otraFarola.pairWithNeighbor(this);
         }
     }
 
