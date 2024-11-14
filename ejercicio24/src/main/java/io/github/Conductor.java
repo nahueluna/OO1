@@ -5,17 +5,17 @@ import java.time.LocalDate;
 public class Conductor extends Usuario {
     private Vehiculo vehiculo;
 
-    public Conductor(String nombre) {
+    public Conductor(String nombre, Vehiculo vehiculo) {
         super(nombre);
-        this.vehiculo = new Vehiculo(this);
-    }
-
-    public void agregarVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
     }
 
     public Viaje darDeAltaViaje(String origen, String destino, double costoTotal, LocalDate fecha) {
-        return new Viaje(this, this.vehiculo, origen, destino, costoTotal, fecha);
+        if(this.tieneSaldo()) {
+            return new Viaje(this, this.vehiculo, origen, destino, costoTotal, fecha);
+        }
+
+        return null;
     }
 
     @Override

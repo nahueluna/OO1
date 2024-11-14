@@ -43,16 +43,14 @@ class ConductorTest {
 
     @BeforeEach
     void setUp() {
-        conductor1 = new Conductor("Pedro");
-        conductor2 = new Conductor("Pablo");
 
         vehiculoMasNuevo =
-                new Vehiculo(conductor1, "BMW", 4, 2020, 999_000.0);
+                new Vehiculo("BMW", 4, 2020, 999_000.0);
         vehiculoMasViejo =
-                new Vehiculo(conductor2, "Fiat", 6, 2018, 1_100_000.0);
+                new Vehiculo("Fiat", 6, 2018, 1_100_000.0);
 
-        conductor1.agregarVehiculo(vehiculoMasNuevo);
-        conductor2.agregarVehiculo(vehiculoMasViejo);
+        conductor1 = new Conductor("Pedro", vehiculoMasNuevo);
+        conductor2 = new Conductor("Pablo", vehiculoMasViejo);
     }
 
     @Test

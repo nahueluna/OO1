@@ -3,22 +3,12 @@ package io.github;
 import java.time.LocalDate;
 
 public class Vehiculo {
-    private Conductor duenio;
     private String descripcion;
     private int capacidadDePasajeros;
     private int anioDeFabricacion;
     private double valorDeMercado;
 
-    public Vehiculo(Conductor conductor) {
-        this.duenio = conductor;
-        this.descripcion = "";
-        this.capacidadDePasajeros = 0;
-        this.anioDeFabricacion = 0;
-        this.valorDeMercado = 0.0;
-    }
-
-    public Vehiculo(Conductor duenio, String descripcion, int capacidadDePasajeros, int anioDeFabricacion, double valorDeMercado) {
-        this.duenio = duenio;
+    public Vehiculo(String descripcion, int capacidadDePasajeros, int anioDeFabricacion, double valorDeMercado) {
         this.descripcion = descripcion;
         this.capacidadDePasajeros = capacidadDePasajeros;
         this.anioDeFabricacion = anioDeFabricacion;
