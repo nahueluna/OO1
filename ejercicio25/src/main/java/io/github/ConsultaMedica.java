@@ -3,8 +3,6 @@ package io.github;
 import java.time.LocalDate;
 
 public class ConsultaMedica extends IntervencionMedica{
-    final double adicionalPorAnioAntiguedad = 100.0;
-    final double adicionalPorMateriales = 300.0;
 
     public ConsultaMedica(LocalDate fecha, Mascota mascota, Medico medico) {
         super(fecha, mascota, medico);
@@ -13,6 +11,8 @@ public class ConsultaMedica extends IntervencionMedica{
     @Override
     public double calcularCostoServicio() {
         double costoIntervencion = super.calcularCostoServicio();
+        double adicionalPorAnioAntiguedad = 100.0;
+        double adicionalPorMateriales = 300.0;
 
         return costoIntervencion +
                 adicionalPorMateriales +

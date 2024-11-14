@@ -4,8 +4,6 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public abstract class IntervencionMedica extends ServicioMedico{
-    final double adicionalPorAtencionDomingo = 200.0;
-
     private Medico medico;
 
     public IntervencionMedica(LocalDate fecha, Mascota mascota, Medico medico) {
@@ -25,7 +23,7 @@ public abstract class IntervencionMedica extends ServicioMedico{
     public double calcularCostoServicio() {
         double adicionalDomingo = 0;
         if(this.correspondeAdicionalDomingo()) {
-            adicionalDomingo = adicionalPorAtencionDomingo;
+            adicionalDomingo = 200.0;
         }
 
         return this.medico.getHonorarios() + adicionalDomingo;

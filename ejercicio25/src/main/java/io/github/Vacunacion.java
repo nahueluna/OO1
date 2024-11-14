@@ -3,7 +3,6 @@ package io.github;
 import java.time.LocalDate;
 
 public class Vacunacion extends IntervencionMedica{
-    final double adicionalPorMateriales = 500.0;
 
     private String nombreVacuna;
     private double costo;
@@ -16,6 +15,8 @@ public class Vacunacion extends IntervencionMedica{
 
     @Override
     public double calcularCostoServicio() {
+        double adicionalPorMateriales = 500.0;
+
         return super.calcularCostoServicio() + adicionalPorMateriales + this.costo;
     }
 }
